@@ -1,0 +1,36 @@
+body {
+	background-color: #222;
+	color: white;
+	font-family: sans-serif;
+}
+
+#remoteList, #remote, #loading {
+	margin: 20px;
+	border: 1px solid black;
+}
+#remoteList, #remote {
+	display: none;
+}
+
+#remoteList, #remote {
+	background-color: #555;
+	width: 180px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+li {
+	display: block;
+	background-color: #888;
+	height: 2em;
+	line-height: 2em;
+	vertical-align: middle;
+	margin: 0.5em 5px;
+	border-radius: 5px;
+}

@@ -1,0 +1,14 @@
+{
+	"resources": {
+		"protocols": "protocols.json",
+		"models": "models.json",
+		"remotes": "remotes.json"
+	},
+	"serial": {
+		"device": "/dev/ttyACM0",
+		"baudRate": 115200
+	},
+	"web": {
+		"port": 8642
+	}
+}

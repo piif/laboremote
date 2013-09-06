@@ -1,0 +1,49 @@
+{
+	"samsung2011": {
+		"description": "Samsung 2011",
+		"output": 2,
+		"model": "samsung2011"
+	},
+	"samsung2012": {
+		"description": "Samsung 2012",
+		"output": 3,
+		"model": "samsung2012"
+	},
+
+	"netgemA": {
+		"description": "Netgem V5",
+		"output": 1,
+		"model": "netgem"
+	},
+	"netgemB": {
+		"description": "Netgem V4",
+		"output": 2,
+		"model": "netgem"
+	},
+
+	"panasonic": {
+		"description": "pana plasma",
+		"output": 1,
+		"model": "panasonic"
+	},
+	"newtv1": {
+		"description": "newtv dev Sagem",
+		"output": 1,
+		"model": "newtv"
+	},
+	"newtv2": {
+		"description": "newtv dev Samsung",
+		"output": 2,
+		"model": "newtv"
+	},
+	"newtv3": {
+		"description": "newtv prod",
+		"output": 3,
+		"model": "newtv"
+	},
+	"dvdk7": {
+    "description": "DVD K7 maison",
+    "output": 1,
+    "model": "dvdk7"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "samsung2011": {
+    "protocol": "samsung",
+    "picture": "",
+    "map": ""
+  },
+	"samsung2012": {
+		"protocol": "samsung",
+		"picture": "",
+		"map": ""
+	},
+	"netgem": {
+		"protocol": "netgem",
+		"picture": "",
+		"map": ""
+	},
+	"newtv": {
+		"protocol": "orangetv",
+		"picture": "pics/newtv.png",
+		"map": "pics/newtv.map"
+	},
+	"panasonic": {
+		"protocol": "panasonic",
+		"picture": "",
+		"map": ""
+	},
+  "dvdk7": {
+    "protocol": "Samsung_00008E",
+    "picture": "pics/dvdk7.png",
+    "map": "pics/dvdk7.map"
+  }
+}

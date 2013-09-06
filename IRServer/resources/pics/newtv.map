@@ -1,0 +1,39 @@
+<img src="pics/newtv.png" width="106" height="404" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:Pif -->
+<area shape="rect" coords="29,95,74,113" href="#up" />
+<area shape="rect" coords="29,129,75,149" href="#down" />
+<area shape="rect" coords="9,112,37,131" href="#left" />
+<area shape="rect" coords="68,111,94,132" href="#right" />
+<area shape="rect" coords="34,111,70,131" href="#ok" />
+<area shape="rect" coords="17,71,61,91" href="#back" />
+<area shape="rect" coords="62,70,86,91" href="#exit" />
+<area shape="rect" coords="33,45,71,72" href="#menu" />
+<area shape="rect" coords="16,199,37,218" href="#1" />
+<area shape="rect" coords="37,199,64,218" href="#2" />
+<area shape="rect" coords="64,198,89,218" href="#3" />
+<area shape="rect" coords="15,218,37,237" href="#4" />
+<area shape="rect" coords="37,218,64,237" href="#5" />
+<area shape="rect" coords="64,218,89,237" href="#6" />
+<area shape="rect" coords="14,237,37,257" href="#7" />
+<area shape="rect" coords="37,237,64,257" href="#8" />
+<area shape="rect" coords="64,237,90,257" href="#9" />
+<area shape="rect" coords="12,257,64,278" href="#0" />
+<area shape="rect" coords="64,257,91,278" href="#cancel" />
+<area shape="rect" coords="11,319,32,339" href="#red" />
+<area shape="rect" coords="32,319,52,339" href="#green" />
+<area shape="rect" coords="52,319,73,339" href="#yellow" />
+<area shape="rect" coords="73,319,94,339" href="#blue" />
+<area shape="rect" coords="11,278,33,298" href="#stop" />
+<area shape="rect" coords="33,278,71,298" href="#playpause" />
+<area shape="rect" coords="72,278,92,298" href="#rec" />
+<area shape="rect" coords="13,298,33,318" href="#prev" />
+<area shape="rect" coords="33,298,52,319" href="#backward" />
+<area shape="rect" coords="52,298,73,319" href="#forward" />
+<area shape="rect" coords="73,298,94,319" href="#next" />
+</map>
