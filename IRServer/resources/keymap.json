@@ -15,6 +15,13 @@
   "[C": "right",
   "[D": "left",
   "\n": "ok",
+  "\u007f": "back",
+  "up"   : "up",
+  "down" : "down",
+  "right": "right",
+  "left" : "left",
+  "enter": "ok",
+  "back" : "back",
  
   "r" : "red",
   "g" : "green",
@@ -24,5 +31,5 @@
   "p" : "programdown",
   "P" : "programup",
   "v" : "volumedown",
-  "V" : "volumeup",
+  "V" : "volumeup"
 }

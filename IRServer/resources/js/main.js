@@ -1,8 +1,16 @@
-var config = {};
-var currentRemotes = [];
+// config items to load from json files
+var config = {
+	protocols: {},
+	models: {},
+	remotes: {},
+    keymap: {}
+};
+// destination remote
+var currentRemote = null;
 
 console.info("main loaded");
 
+// load a config file
 function loadConfig (name) {
 	if (config.resources && config.resources[name]) {
 		config.waiting++;
@@ -15,6 +23,7 @@ function loadConfig (name) {
 		console.error("config.resources." + name + " missing");
 	}
 }
+// callback for config loading
 function configLoaded (name, data) {
 	console.info("file " + name + " loaded " + config.waiting);
 	config[name] = data;
@@ -28,6 +37,7 @@ function configFailed (name, status) {
 	console.error("file " + name + " failed", status);
 }
 
+// initialize remote list
 function setRemoteList () {
 	var html = "";
 	for (var name in config.remotes) {
@@ -47,11 +57,11 @@ function setRemoteList () {
 	});
 }
 
+// show one remote
 function showRemote (id) {
 	console.log("show remote " + id);
 	// TODO : handle several remote simultaneously
-	currentRemotes = [ id ];
-	// TODO : several remotes => add new keys when adding one / remove specific ones when removing one
+	currentRemote = id;
 	var html = "<tr>", i = 0;
 	for (var key in config.remotes[id].protocol.keys) {
 		if ("k-" + key in standardButtons) {
@@ -65,9 +75,10 @@ function showRemote (id) {
 	}
 	html += "</tr>";
 	$("#remote-other").html(html);
-	$("#remote-other td").click(onKey);
+	$("#remote-other td").click(onClick);
 	$("#remote").show();
 	$("#remoteList").hide();
+	$(window).keypress(onKey);
 //	$.ajax({
 //		url: config.remotes[id].model.map,
 //		dataType: "text",
@@ -77,24 +88,52 @@ function showRemote (id) {
 //	});
 }
 
-function onKey(event) {
+function onClick(event) {
 	var key = $(this).attr("id").substring(2);
-	var command = event.ctrlKey ? "R" : "S";
-	console.log("HIT " + key + " for " + command + " on " + currentRemotes[0]);
-	if (command === "S") {
-		for (var i = 0; i < currentRemotes.length; i++) {
-			if (!(key in config.remotes[currentRemotes[i]].protocol.keys)) {
-				continue;
-			}
-			$.ajax({
-				url: config.rootUrl + "/" + currentRemotes[i] + "/" + key
-			});
-		}
+	console.log("HIT " + key + " on " + currentRemote);
+
+	send(key);
+}
+function onKey(event) {
+	var key = null;
+	if (event.charCode != 0) {
+		key = String.fromCharCode(event.charCode);
 	} else {
-		$.ajax({
-			url: config.rootUrl + "/RECEIVE/" + currentRemotes[0] + " " + key
-		});
+		switch(event.keyCode) {
+		case KeyEvent.DOM_VK_UP:
+			key = "up";
+		break;
+		case KeyEvent.DOM_VK_DOWN:
+			key = "down";
+		break;
+		case KeyEvent.DOM_VK_LEFT:
+			key = "left";
+		break;
+		case KeyEvent.DOM_VK_RIGHT:
+			key = "right";
+		break;
+		case KeyEvent.DOM_VK_RETURN:
+			key = "enter";
+		break;
+		case KeyEvent.DOM_VK_BACK_SPACE:
+			key = "back";
+		break;
+		}
 	}
+	console.log("HIT " + key + " on " + currentRemote);
+	event.stopPropagation();
+	if (key in config.keymap) {
+		event.preventDefault();
+		send(config.keymap[key]);
+	}
+}
+function send(key) {
+	if (!(key in config.remotes[currentRemote].protocol.keys)) {
+		return;
+	}
+	$.ajax({
+		url: config.rootUrl + "/" + currentRemote + "/" + key
+	});
 }
 
 $(document).ready(function () {
@@ -119,6 +158,7 @@ $(document).ready(function () {
 			loadConfig("models");
 			loadConfig("remotes");
 			loadConfig("protocols");
+			loadConfig("keymap");
 			config.rootUrl = location.protocol + "//" + location.hostname + ":" + config.web.port;
 		},
 		error: function (status) {
@@ -127,16 +167,19 @@ $(document).ready(function () {
 		}
 	});
 
+	// list of buttons common to all remotes
 	standardButtons = {};
 
 	var buttons = $("#remote td[id*='k']");
 	buttons.each(function() {
 		standardButtons[$(this).attr("id")] = true;
 	});
-	buttons.click(onKey);
+	buttons.click(onClick);
 
+	// bind "back to list" button
 	$("#remote li").click(function () {
 		$("#remote").hide();
 		$("#remoteList").show();
+		currentRemote = null;
 	});
 });
