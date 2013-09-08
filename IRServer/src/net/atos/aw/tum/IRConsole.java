@@ -1,8 +1,12 @@
 package net.atos.aw.tum;
 
 import java.io.Console;
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class IRConsole extends Thread {
 	IRServer parent;
@@ -27,6 +31,26 @@ public class IRConsole extends Thread {
 		console = System.console();
 	}
 
+	private static Map<String, String> keymap;
+
+	/**
+	 * load protocol list from json config
+	 * @param config
+	 * @throws JSONException
+	 */
+	public static void loadRemotes(JSONObject keymapJson)
+			throws JSONException, ConfigException {
+		keymap = new HashMap<String, String>();
+
+		@SuppressWarnings("unchecked")
+		Iterator<String> iter = keymapJson.keys();
+		while(iter.hasNext()) {
+			String key = iter.next();
+			String value = keymapJson.getString(key);
+			keymap.put(key, value);
+		}
+	}
+
 	public void run() {
 		for(;;) {
 			System.out.print("> ");
@@ -44,7 +68,7 @@ public class IRConsole extends Thread {
 
 				if (words[1].equals("remotes")) {
 					System.out.println("Defined remotes :");
-					
+
 					Iterator<String> keys = IRRemote.getRemoteNames();
 					while (keys.hasNext()) {
 						System.out.println("  " + keys.next());
@@ -52,7 +76,7 @@ public class IRConsole extends Thread {
 
 				} else if (words[1].equals("protocols")) {
 					System.out.println("Defined protocols :");
-					
+
 					Iterator<String> keys = IRProtocol.getProtocolNames();
 					while (keys.hasNext()) {
 						System.out.println("  " + keys.next());
@@ -109,40 +133,8 @@ public class IRConsole extends Thread {
 					continue;
 				}
 				String remote = words[1];
+				interact(remote);
 
-				System.out.println("interactive mode, press ESC ESC to quit");
-
-				try {
-					Stty.setRow();
-
-                    while (true) {
-                    	int key = System.in.read();
-                    	if (key == 27) {
-                    		int subkey = System.in.read();
-                    		if (subkey == 27) {
-                    			break;
-                    		} else if (subkey == '[') {
-                    			// special key -> read third part
-                    			key = System.in.read();
-                    		} else {
-                    			// one ESC followed by something else
-                    			// ignore ESC
-                    			key = subkey;
-                    		}
-                    	}
-                    	System.out.println("key " + key);
-                    	// TODO : monter une liste d'alias dans les protocoles
-                    	// + appeler la touche associée
-                    }
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					try {
-						Stty.unsetRow();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
 			} else if (words[0].equals("shutdown")) {
 				break;
 
@@ -165,5 +157,49 @@ public class IRConsole extends Thread {
 			}
 		}
 		parent.shutdown();
+	}
+	
+	public void interact(String remote) {
+		System.out.println("interactive mode, press ESC ESC to quit");
+
+		String key;
+		// TODO : verify this remote exists
+		try {
+			Stty.setRow();
+
+            while (true) {
+            	int ch = System.in.read();
+            	if (ch == 27) {
+            		int subkey = System.in.read();
+            		if (subkey == 27) {
+            			break;
+            		} else if (subkey == '[') {
+            			// special key -> read third part
+            			ch = System.in.read();
+            			key = "[" + String.valueOf((char)ch);
+            		} else {
+            			// one ESC followed by something else
+            			// ignore ESC
+            			key = String.valueOf((char)ch);
+            		}
+            	} else {
+            		key = String.valueOf((char)ch);
+            	}
+            	if (keymap.containsKey(key)) {
+            		System.out.println("key " + key + " = " + keymap.get(key));
+            		worker.sendKey(remote, key);
+            	} else {
+            		System.out.println("key " + key + " ???");
+            	}
+            }
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				Stty.unsetRow();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

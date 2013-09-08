@@ -2,7 +2,8 @@
 	"resources": {
 		"protocols": "protocols.json",
 		"models": "models.json",
-		"remotes": "remotes.json"
+		"remotes": "remotes.json",
+    "keymap": "keymap.json"
 	},
 	"serial": {
 		"device": "/dev/ttyACM0",

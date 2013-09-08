@@ -24,7 +24,7 @@ public class IRServer {
 
 	static String configFile = "config.json";
 	JSONObject config;
-	JSONObject protocols, models, remotes;
+	JSONObject protocols, models, remotes, keymap;
 
 	JSONObject loadJson(String name) throws IOException, JSONException {
 		ClassLoader cl = ClassLoader.getSystemClassLoader();
@@ -117,6 +117,12 @@ public class IRServer {
 			throw new RuntimeException("Error in remotes config : " + e);
 		} catch(ConfigException e) {
 			throw new RuntimeException("Error in remotes config : " + e);
+		}
+		try {
+			keymap = loadJson(resources.getString("keymap"));
+			IRConsole.loadRemotes(keymap);
+		} catch(IOException|JSONException|ConfigException e) {
+			throw new RuntimeException("Error in keymap : " + e);
 		}
 	}
 
