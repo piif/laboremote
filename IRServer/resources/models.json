@@ -17,7 +17,24 @@
 	"newtv": {
 		"protocol": "orangetv",
 		"picture": "pics/newtv.png",
-		"map": "pics/newtv.map"
+		"map": [
+		  "tvsize", "power",
+		  "", "info", "guide", "vod",
+		  "", "menu",
+		  "", "back", "quit",
+		  "", "up",
+		  "", "left", "ok", "right",
+		  "", "down",
+		  "", "volup", "list", "pgup",
+		  "", "voldown", "mute", "pgdown",
+		  "", "1", "2", "3",
+		  "", "4", "5", "6",
+		  "", "7", "8", "9",
+		  "", "0", "cancel",
+		  "", "stop", "playpause", "rec",
+		  "", "prev", "rewind", "forward", "next",
+		  "", "red", "green", "yellow", "blue"
+		]
 	},
 	"panasonic": {
 		"protocol": "panasonic",
