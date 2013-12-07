@@ -1,14 +1,44 @@
 {
-	"samsung2011": {
+  "lg" : {
+    "description": "LG 2013",
+    "output": 1,
+    "model": "lg"
+  },
+  "Sony2011" : {
+    "description": "Sony 2011",
+    "output": 1,
+    "model": "sony"
+  },
+  "Sony2012" : {
+    "description": "Sony 2012",
+    "output": 2,
+    "model": "sony"
+  },
+  "toshiba" : {
+    "description": "Toshiba",
+    "output": 1,
+    "model": "toshiba"
+  },
+ 	"samsung2011": {
 		"description": "Samsung 2011",
 		"output": 2,
-		"model": "samsung2011"
+		"model": "samsung"
 	},
 	"samsung2012": {
 		"description": "Samsung 2012",
 		"output": 3,
-		"model": "samsung2012"
+		"model": "samsung"
 	},
+  "tcl": {
+    "description": "TCL",
+    "output": 2,
+    "model": "thomson"
+  },
+  "panasonic": {
+    "description": "pana plasma",
+    "output": 1,
+    "model": "panasonic"
+  },
 
 	"netgemA": {
 		"description": "Netgem V5",
@@ -21,11 +51,17 @@
 		"model": "netgem"
 	},
 
-	"panasonic": {
-		"description": "pana plasma",
-		"output": 1,
-		"model": "panasonic"
-	},
+  "evoQlf": {
+    "description": "Evolution Qlf",
+    "output": 3,
+    "model": "evolution"
+  },
+  "evoProd": {
+    "description": "Evolution Prod",
+    "output": 4,
+    "model": "evolution"
+  },
+
 	"newtv1": {
 		"description": "newtv dev Sagem",
 		"output": 1,
@@ -41,6 +77,7 @@
 		"output": 3,
 		"model": "newtv"
 	},
+
 	"dvdk7": {
     "description": "DVD K7 maison",
     "output": 1,
