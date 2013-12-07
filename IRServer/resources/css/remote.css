@@ -5,52 +5,27 @@
 	padding-left: 15px;
 }
 
-table {
-    margin: 5px auto;
+#remote-keys > div {
+   	text-align: center;
 }
-td {
-	width: 30px;
-	height: 30px;
-	padding: 5px;
+#remote-keys > div > span {
+	display: inline-block;
+	height: 16px;
+	margin: 2px;
+	padding: 4px;
+	min-width: 16px;
 	background-color: #888;
 	color: white;
 	border-radius: 5px;
 
-    max-width: 30px;
-    overflow: hidden;
    	text-align: center;
 	vertical-align: middle;
-
-	background-repeat: no-repeat;
-	background-position: center;
 }
-.skip {
-	background-color: transparent;
+#remote-keys img {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	text-align: center;
+	border: 0px none;
+	height: 16px;
 }
-
-#remote-other {
-	font-size: smaller;
-}
-
-#k-ok { background-image: url('../icons/ok.png') }
-#k-left { background-image: url('../icons/left.png') }
-#k-down { background-image: url('../icons/down.png') }
-#k-right { background-image: url('../icons/right.png') }
-#k-up { background-image: url('../icons/up.png') }
-
-#k-red { background-image: url('../icons/red.png') }
-#k-green { background-image: url('../icons/green.png') }
-#k-blue { background-image: url('../icons/blue.png') }
-#k-yellow { background-image: url('../icons/yellow.png') }
-
-#k-back { background-image: url('../icons/undo.png') }
-
-#k-chdown { background-image: url('../icons/ch-down.png') }
-#k-chup { background-image: url('../icons/ch-up.png') }
-#k-voldown { background-image: url('../icons/vol-down.png') }
-#k-volup { background-image: url('../icons/vol-up.png') }
-
-#k-play { background-image: url('../icons/play.png') }
-#k-stop { background-image: url('../icons/stop.png') }
-#k-forward { background-image: url('../icons/forward.png') }
-#k-backward { background-image: url('../icons/rewind.png') }

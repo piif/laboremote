@@ -62,20 +62,20 @@ function showRemote (id) {
 	console.log("show remote " + id);
 	// TODO : handle several remote simultaneously
 	currentRemote = id;
-	var html = "<tr>", i = 0;
-	for (var key in config.remotes[id].protocol.keys) {
-		if ("k-" + key in standardButtons) {
-			continue;
+	var html = "<div>", i = 0;
+	var map = config.remotes[id].model.map;
+	for (var i = 0; i < map.length; i++) {
+		if (map[i] === "") {
+			html += "</div>\n<div>";
+		} else {
+			html += "<span id='k-" + map[i] + "'><img onError=\"replace('" + map[i] + "')\" src='icons/" + map[i] + ".png'/></span>"
 		}
-		if (i && i % 4 === 0) {
-			html += "</tr><tr>";
-		}
-		html += "<td id='k-" + key + "'>" + key + "</td>"
-		i++;
 	}
-	html += "</tr>";
-	$("#remote-other").html(html);
-	$("#remote-other td").click(onClick);
+	html += "</div>\n";
+
+	$("#remote-name").html(config.remotes[id].description);
+	$("#remote-keys").html(html);
+	$("#remote-keys span").click(onClick);
 	$("#remote").show();
 	$("#remoteList").hide();
 	$(window).keypress(onKey);
@@ -86,6 +86,10 @@ function showRemote (id) {
 //			console.log(data);
 //		}
 //	});
+}
+
+function replace (id) {
+	$("#k-" + id).html(id);
 }
 
 function onClick(event) {
