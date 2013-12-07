@@ -114,14 +114,14 @@ public class IRConsole extends Thread {
 
 			} else if (words[0].equals("record")) {
 				if (words.length > 2) {
-					System.err.println("must be : record [protocolName]");
+					System.err.println("must be : record [modelName]");
 					continue;
 				}
 				if (words.length == 2) {
-					String protocol = words[1];
-					System.out.println(worker.recordKeys(protocol));
+					String model = words[1];
+					System.out.println(worker.recordKeys(model));
 				} else {
-					System.out.println(worker.recordKey("dummy"));
+					System.out.println(worker.recordKey("one key"));
 				}
 
 			} else if (words[0].equals("reload")) {

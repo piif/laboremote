@@ -1,6 +1,7 @@
 package net.atos.aw.tum;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import net.atos.aw.tum.utils.HexDump;
@@ -78,18 +79,17 @@ public class IRWorker {
 		}
 	}
 
-	public String recordKeys(String protocolName) {
+	public String recordKeys(String modelName) {
 		// get list of keys for this protocol
-		IRProtocol protocol = IRProtocol.getProtocol(protocolName);
-		if (protocol == null) {
-			return "Unknown protocol";
+		IRModel model= IRModel.getModel(modelName);
+		if (model == null) {
+			return "Unknown model";
 		}
 
-		Iterator<String> keys = protocol.keys.keySet().iterator();
-		StringBuffer keyList = new StringBuffer(keys.next());
-		while (keys.hasNext()) {
+		StringBuffer keyList = new StringBuffer();
+		for (int i = 0; i < model.shortMap.length; i++) {
 			keyList.append(',');
-			keyList.append(keys.next());
+			keyList.append(model.shortMap[i]);
 		}
 		int keyListLen = keyList.length();
 
