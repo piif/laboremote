@@ -30,5 +30,6 @@ else
 fi
 
 "$JAVA" -classpath "$CLASSPATH" $opts "-Djava.library.path=$LIBPATH" \
+	 -Djava.net.preferIPv4Stack=true \
 	net.atos.aw.tum.IRServer \
 	-config $conf.json "$@"
