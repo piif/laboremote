@@ -1,159 +1,196 @@
 {
-  "lg": {
-    "protocol": "lg",
-    "map": [
-    ]
-  },
-  "sony": {
-    "protocol": "sony",
-    "map": [
-      "source", "power",
-      "", "track", "prev", "pause", "next",
-      "", "manual", "backward", "play", "forward",
-      "", "tvsize", "stop", "rec",
-      "", "digital", "exit", "scene", "vod",
-      "", "guide", "sync", "info",
-      "", "up",
-      "", "left", "ok", "right",
-      "", "down",
-      "", "back", "home", "options",
-      "", "red", "green", "yellow", "blue",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "list", "0", "...",
-      "", "mute", "vol-up", "ch-up", "audio",
-      "", "vol-down", "ch-down"
-    ]
-  },
-  "toshiba": {
-    "protocol": "toshiba",
-    "map": [
-      "source", "power", "tv",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "ad", "0", "...",
-      "", "vol-up", "info", "ch-up",
-      "", "mute",
-      "", "vol-down", "quick", "ch-down",
-      "", "pip", "page", "text", "list",
-      "", "menu", "uup", "guide",
-      "", "up",
-      "", "lleft", "left", "ok", "right", "rright",
-      "", "down",
-      "", "back", "ddown", "exit",
-      "", "backward", "play", "forward",
-      "", "prev", "stop", "pause", "next",
-      "", "red", "green", "yellow", "blue"
-    ]
-  },
+	"lg": {
+		"protocol": "lg",
+		"map": [
+			"power",
+			"help", "tvsize", "source", "tv",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "list", "0", "QView",
+			"", "vol-up", "fav", "ch-up",
+			"", "3D",
+			"", "vol-down", "mute", "ch-down",
+			"", "info", "smart", "apps",
+			"", "up",
+			"", "left", "ok", "right",
+			"", "down",
+			"", "back", "guide", "exit",
+			"", "red", "green", "yellow", "blue",
+			"", "text", "options", "menu",
+			"", "stop", "play", "pause",
+			"", "backward", "forward", "rec",
+			"", "settings", "ad", "app"
+		]
+	},
+	"sony": {
+		"protocol": "sony",
+		"map": [
+			"source", "power",
+			"", "track", "prev", "pause", "next",
+			"", "manual", "backward", "play", "forward",
+			"", "tvsize", "stop", "rec",
+			"", "digital", "exit", "scene", "vod",
+			"", "guide", "sync", "info",
+			"", "up",
+			"", "left", "ok", "right",
+			"", "down",
+			"", "back", "home", "options",
+			"", "red", "green", "yellow", "blue",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "list", "0", "...",
+			"", "mute", "vol-up", "ch-up", "audio",
+			"", "vol-down", "ch-down"
+		]
+	},
+	"toshiba": {
+		"protocol": "toshiba",
+		"map": [
+			"source", "power", "tv",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "ad", "0", "...",
+			"", "vol-up", "info", "ch-up",
+			"", "mute",
+			"", "vol-down", "quick", "ch-down",
+			"", "pip", "page", "text", "list",
+			"", "menu", "uup", "guide",
+			"", "up",
+			"", "lleft", "left", "ok", "right", "rright",
+			"", "down",
+			"", "back", "ddown", "exit",
+			"", "backward", "play", "forward",
+			"", "prev", "stop", "pause", "next",
+			"", "red", "green", "yellow", "blue"
+		]
+	},
 	"samsung": {
 		"protocol": "samsung",
 		"map": [
-		  "power", "hdmi", "source",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "ttx", "0", "pre-ch",
-      "", "vol-up", "mute", "ch-up",
-      "", "vol-down", "list", "ch-down",
-      "", "hub", "menu", "guide",
-      "", "tools", "up", "info",
-      "", "left", "ok", "right",
-      "", "back", "down", "exit",
-      "", "red", "green", "yellow", "blue",
-      "", "mode", "srs", "dual",
-      "", "manual", "tvsize", "subt",
-      "", "backward", "pause", "forward",
-      "", "rec", "play", "stop"
+			"power", "hdmi", "source",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "ttx", "0", "pre-ch",
+			"", "vol-up", "mute", "ch-up",
+			"", "vol-down", "list", "ch-down",
+			"", "hub", "menu", "guide",
+			"", "tools", "up", "info",
+			"", "left", "ok", "right",
+			"", "back", "down", "exit",
+			"", "red", "green", "yellow", "blue",
+			"", "mode", "srs", "dual",
+			"", "manual", "tvsize", "subt",
+			"", "backward", "pause", "forward",
+			"", "rec", "play", "stop"
 		]
 	},
-  "thomson": {
-    "protocol": "thomson",
-    "map": [
-      "power", "source",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "eco", "0", "guide",
-      "", "menu", "up", "exit",
-      "", "left", "ok", "right",
-      "", "options", "down", "back",
-      "", "vol-up", "info", "ch-up",
-      "", "vol-down", "mute", "ch-down",
-      "", "text", "subtitle", "list", "tv",
-      "", "red", "green", "yellow", "blue"
-    ]
-  },
-  "panasonic": {
-    "protocol": "panasonic",
-    "map": [
-    ]
-  },
+	"thomson": {
+		"protocol": "thomson",
+		"map": [
+			"power", "source",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "eco", "0", "guide",
+			"", "menu", "up", "exit",
+			"", "left", "ok", "right",
+			"", "options", "down", "back",
+			"", "vol-up", "info", "ch-up",
+			"", "vol-down", "mute", "ch-down",
+			"", "text", "subtitle", "list", "tv",
+			"", "red", "green", "yellow", "blue"
+		]
+	},
+	"panasonic": {
+		"protocol": "panasonic",
+		"map": [
+			"power", "tv", "av",
+			"", "menu", "tvsize", "guide", "rec",
+			"", "light", "link", "tools", "internet",
+			"", "info", "exit",
+			"", "up",
+			"", "left", "ok", "right",
+			"", "down",
+			"", "options", "back",
+			"", "red", "green", "yellow", "blue",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "mute", "0", "reload",
+			"", "vol-up", "ch-up",
+			"", "vol-down", "ch-down",
+			"", "power", "rec", "ddown", "uup",
+			"", "backward", "play", "forward",
+			"", "stop", "pause"
+		]
+	},
 	"netgem": {
 		"protocol": "netgem",
 		"map": [
-		  "mute", "power",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "cancel", "0", "univers",
-      "", "guide", "menu", "list",
-	    "", "red", "green", "yellow", "blue",
-	    "", "vol-up", "up", "ch-up",
-	    "", "left", "ok", "right",
-	    "", "vol-down", "down", "ch-down",
-	    "", "back", "info",
-	    "", "backward", "nav", "forward",
-	    "", "playpause",
-	    "", "rec",
-	    "", "stop",
-	    "", "joker"
+			"mute", "power",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "cancel", "0", "univers",
+			"", "guide", "menu", "list",
+			"", "red", "green", "yellow", "blue",
+			"", "vol-up", "up", "ch-up",
+			"", "left", "ok", "right",
+			"", "vol-down", "down", "ch-down",
+			"", "back", "info",
+			"", "backward", "nav", "forward",
+			"", "playpause",
+			"", "rec",
+			"", "stop",
+			"", "joker"
 		]
 	},
-  "evolution": {
-    "protocol": "netgem",
-    "map": [
-      "sfr", "power",
-      "", "up",
-      "", "left", "ok", "right",
-      "", "down",
-      "", "back",
-      "", "backward", "playpause", "forward",
-      "", "vol-down", "rec", "vol-up",
-      "", "1", "2", "3",
-      "", "4", "5", "6",
-      "", "7", "8", "9",
-      "", "0"
-    ]
-  },
+	"evolution": {
+		"protocol": "netgem",
+		"map": [
+			"sfr", "power",
+			"", "up",
+			"", "left", "ok", "right",
+			"", "down",
+			"", "back",
+			"", "backward", "playpause", "forward",
+			"", "vol-down", "rec", "vol-up",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "0"
+		]
+	},
 	"newtv": {
 		"protocol": "orangetv",
 		"picture": "pics/newtv.png",
 		"map": [
-		  "tvsize", "power",
-		  "", "info", "guide", "vod",
-		  "", "menu",
-		  "", "back", "quit",
-		  "", "up",
-		  "", "left", "ok", "right",
-		  "", "down",
-		  "", "vol-up", "list", "ch-up",
-		  "", "vol-down", "mute", "ch-down",
-		  "", "1", "2", "3",
-		  "", "4", "5", "6",
-		  "", "7", "8", "9",
-		  "", "0", "cancel",
-		  "", "stop", "playpause", "rec",
-		  "", "prev", "backward", "forward", "next",
-		  "", "red", "green", "yellow", "blue"
+			"tvsize", "power",
+			"", "info", "guide", "vod",
+			"", "menu",
+			"", "back", "quit",
+			"", "up",
+			"", "left", "ok", "right",
+			"", "down",
+			"", "vol-up", "list", "ch-up",
+			"", "vol-down", "mute", "ch-down",
+			"", "1", "2", "3",
+			"", "4", "5", "6",
+			"", "7", "8", "9",
+			"", "0", "cancel",
+			"", "stop", "playpause", "rec",
+			"", "prev", "backward", "forward", "next",
+			"", "red", "green", "yellow", "blue"
 		]
 	},
 
-  "dvdk7": {
-    "protocol": "Samsung_00008E",
-    "picture": "pics/dvdk7.png",
-    "map": []
-  }
+	"dvdk7": {
+		"protocol": "Samsung_00008E",
+		"picture": "pics/dvdk7.png",
+		"map": []
+	}
 }
